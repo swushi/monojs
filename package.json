@@ -7,7 +7,7 @@
   "scripts": {
     "start": "dist/index.js",
     "build": "tsc",
-    "dev": "rm -rf my-monorepo && npm run build && DEBUG=* npm run start"
+    "dev": "rm -rf my-monorepo && npm run build && chmod +x dist/index.js && DEBUG=* npm run start"
   },
   "keywords": [],
   "author": "",
