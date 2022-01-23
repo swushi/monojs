@@ -2,7 +2,10 @@
 
 import inquirer from "inquirer";
 import createMonorepo from "./create-monorepo";
+import { log } from "./logger";
 import { Prompts } from "./types";
+
+log('Starting')
 
 inquirer
   .prompt<Prompts>([
