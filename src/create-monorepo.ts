@@ -1,6 +1,4 @@
-import fs from "fs";
-import os from "os";
-import { spawnSync, execSync } from "child_process";
+import { spawnSync } from "child_process";
 import { Prompts } from "./types";
 import createExpoApp from "./create-expo-app";
 
@@ -14,4 +12,6 @@ export default function createMonorepo(a: Prompts) {
   if (a.createMobileApp) {
     createExpoApp(a);
   }
+
+  
 }
