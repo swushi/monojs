@@ -5,7 +5,7 @@ import createMonorepo from "./create-monorepo";
 import { log } from "./logger";
 import { Prompts } from "./types";
 
-log('Starting')
+log("Starting");
 
 inquirer
   .prompt<Prompts>([

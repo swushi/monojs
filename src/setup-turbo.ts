@@ -19,7 +19,7 @@ export default function setupTurbo(a: Prompts) {
   };
 
   obj.scripts = {
-    dev: "turbo run dev",
+    dev: "turbo run dev --parallel",
   };
 
   setPackageJson(packagejsonPath, obj);
