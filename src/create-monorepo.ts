@@ -10,6 +10,7 @@ import chalk from "chalk";
 import { exec } from "child_process";
 
 export default function createMonorepo(a: Prompts) {
+  console.log("");
   const spinner = ora("Initializing Monorepo").start();
 
   log("Creating monorepo");
@@ -23,9 +24,11 @@ export default function createMonorepo(a: Prompts) {
   spawnSync("npm", ["init", "-y"], { cwd: root });
 
   spinner.succeed("Initialized Monorepo");
-  spinner.start("Creating React-Native Application");
-  if (a.createMobileApp) createExpoApp(a);
-  spinner.succeed("Created React-Native Application");
+  if (a.createMobileApp) {
+    spinner.start("Creating React-Native Application");
+    createExpoApp(a);
+    spinner.succeed("Created React-Native Application");
+  }
 
   spinner.start("Installing Dependencies");
   setupTurbo(a);
