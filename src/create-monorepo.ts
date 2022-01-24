@@ -7,6 +7,7 @@ import createExpoApp from "./create-expo-app";
 import installDeps from "./install-deps";
 import setupTurbo from "./setup-turbo";
 import chalk from "chalk";
+import { exec } from "child_process";
 
 export default function createMonorepo(a: Prompts) {
   const spinner = ora("Initializing Monorepo").start();
@@ -30,6 +31,10 @@ export default function createMonorepo(a: Prompts) {
   setupTurbo(a);
   installDeps(a);
   spinner.succeed("Installed Dependencies");
+
+  exec('git init && git add --all && git commit -m "Created monorepo"', {
+    cwd: root,
+  });
 
   console.log("\nSuccessfully created your Monorepo:", chalk.cyan(a.directory));
   console.log("\nTo get started, run:\n");
