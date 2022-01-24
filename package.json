@@ -3,7 +3,10 @@
   "version": "1.1.10",
   "description": "",
   "main": "index.js",
-  "bin": "dist/index.js",
+  "bin": {
+    "monorepo-create": "dist/index.js",
+    "monotooljs": "dist/index.js"
+  },
   "scripts": {
     "start": "dist/index.js",
     "build": "tsc",
